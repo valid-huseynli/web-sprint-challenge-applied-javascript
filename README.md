@@ -27,14 +27,19 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+- DOM is an Application Programming Interface ("API") provided by the BROWSER, not Javascript. It acts as a bridge between the browser and code. It is an interface that allows a programming language (like JS) to manipulate the content, structure, and style on a webpage.
 
 2. What is an event?
+- Event sent to notify code of interesting things that have taken place. Each event is represented by an object which is based on the Event interface, and may have additional custom fields and/or functions used to get additional information about what happened. Events can represent everything from basic user interactions to automated notifications of things happening in the rendering model
 
 3. What is an event listener?
+- Event listner is an interface that represents an object that can handle an event.
 
 4. Why would we convert a NodeList into an Array?
+ - If you need to iterate over each element, or , if you have either an array-like type, HTMLCollection or NodeList, and you wnt to perform an Array function, like .map(), you have to convert into an array.
 
 5. What is a component?
+- Component is a section of reusable code that we create to keep our code DRY and makes development faster.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
