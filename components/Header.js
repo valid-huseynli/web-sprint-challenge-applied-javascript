@@ -11,28 +11,31 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-const headerCont = document.querySelector('.header-container');
-headerCont.append(Header());
+
+
+// const headerCont = document.querySelector('.header-container');
+// headerCont.append(Header());
+const headerCont = document.querySelector(".header-container");
 
 function Header() {
 
-const mainHeader = document.createElement('div');
-    const span1 = document.createElement('span');
-    const header1 = document.createElement('h1');
-    const span2 = document.createElement('span');
+const mainHeader = document.createElement("div");
+    const span1 = document.createElement("span");
+    const header1 = document.createElement("h1");
+    const span2 = document.createElement("span");
 
-    mainHeader.append(span1, header1, span2);
-
-    mainHeader.classList.add('header');
-    span1.classList.add('date');
-    span2.classList.add('temp');
+    mainHeader.classList.add("header");
+    span1.classList.add("date");
+    span2.classList.add("temp");
 
     span1.textContent = "March 28th, 2020";
     header1.textContent = "Lambda Times";
     span2.textContent = "98°";
 
+    headerCont.append(Header());
+    mainHeader.append(span1, header1, span2);
+
 return mainHeader;
 }
 
-// const headerCont = document.querySelector('.header-container');
-// headerCont.append(Header());
+headerCont.appendChild(Header())

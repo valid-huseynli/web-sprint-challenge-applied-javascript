@@ -21,49 +21,33 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
-const log = console.log;
+const imgContainer = document.createElement("div");
+const img = document.createElement("img");
+const name = document.createElement("span");
 
-const cardContainer = document.querySelector('.cards-container')
+// creating classes
+cardContainer.classList.add("card");
+headline.classList.add("headline");
+author.classList.add("author");
+imgContainer.classList.add("img-container");
 
+// creating textContent
 
-const Card = (article) => {
-const cardWrap = document.createElement('div');
-    const articleHeadline = document.createElement('div');
-    const authorWrap = document.createElement('div');
-    const imgWrap = document.createElement('div');
-    const imgPic = document.createElement('img');
-    const authorName = document.createElement('span');
+headline.textContent = article.headline;
+img.src = article.authorPhoto;
+name.textContent = `{By ${article.authorName}`;
 
-    cardWrap.classList.add('card');
-    articleHeadline.classList.add('headline');
-    authorWrap.classList.add('author');
-    imgWrap.classList.add('img-container')
+// appending
 
-    cardWrap.append(articleHeadline, authorWrap);
-    authorWrap.append(imgWrap, authorName);
-    imgWrap.append(imgPic);
+cardContainer.append(headline, author);
+author.append(imgContainer, name);
+imgContainer.append(img);
 
-    articleHeadline.textContent = article.headline;
-    authorName.textContent = article.authorName;
-    imgPic.src = article.authorPhoto;
+// event listener
 
-    cardWrap.addEventListener('click' , () => {
-        log(articleHeadline.textContent);
-    })
-return cardWrap;
-}
+cardContainer.addEventListener("click", () => {
+  console.log(headline.textContent);
+});
 
-axios.get('https://lambda-times-api.herokuapp.com/articles').then((goodResponse) => {
-        log('card response here' , goodResponse);
-        const responseArray = Object.values(goodResponse.data.articles)
-            log('response Array here' , responseArray)
-            responseArray.forEach(category => {
-                // log('category response here' , category)
-                category.forEach(article => {
-                    // log('article response here' , article)
-                    cardContainer.appendChild(Card(article))
-                })
-            })
-    })
-    .catch((badResponse) => {alert(`${badResponse} is why this page didn't load`);
-    })
+return cardContainer;
+
