@@ -30,67 +30,67 @@ let imagesArray = [
   "https://tk-assets.lambdaschool.com/0b770382-d0eb-4465-8bf2-692a79fcda71_turntable.jpeg"
 ]
 
-const carouselCompnent = (array) => {
+// const carouselCompnent = (array) => {
 
-  const carouselDiv = document.createElement('div');
-    const divLeft = document.createElement('button');
-    const picContainer = document.createElement('div')
-    const divRight= document.createElement('button');
+//   const carouselDiv = document.createElement('div');
+//     const divLeft = document.createElement('button');
+//     const picContainer = document.createElement('div')
+//     const divRight= document.createElement('button');
    
     
-    carouselDiv.classList.add('carousel');
-    divLeft.classList.add('left-button');
-    divRight.classList.add('right-button');
-    picContainer.classList.add('pictures')
+//     carouselDiv.classList.add('carousel');
+//     divLeft.classList.add('left-button');
+//     divRight.classList.add('right-button');
+//     picContainer.classList.add('pictures')
     
 
-    carouselDiv.append(divLeft, picContainer, divRight);
+//     carouselDiv.append(divLeft, picContainer, divRight);
          
    
-    divLeft.textContent= "<"
-    divRight.textContent= ">"
-    array.forEach((images) => {
-      const picture=document.createElement('img')
-      picContainer.append(picture)
-      picture.src=images;
-      picContainer.firstChild.classList.add('active')
-      picContainer.firstChild.style.display='block'
+//     divLeft.textContent= "<"
+//     divRight.textContent= ">"
+//     array.forEach((images) => {
+//       const picture=document.createElement('img')
+//       picContainer.append(picture)
+//       picture.src=images;
+//       picContainer.firstChild.classList.add('active')
+//       picContainer.firstChild.style.display='block'
     
-      const nextPicture = () => {
-      const current = document.querySelector('.active');
-      current.classList.remove('active')
-      current.style.display = 'none';
-      if (current.nextElementSibling){
-        current.nextElementSibling.classList.add('active')
-        current.nextElementSibling.style.display = "block";
-      }else{
-        picture[0].classList.add('active')
-      }
-      setTimeout(() => {current.classList.remove('active')})
-    }
-    const prevPicture = () => {
-      const current = document.querySelector('.active');
-      current.classList.remove('active')
-      current.style.display = 'none'
-      if (current.previousElementSibling){
-        current.previousElementSibling.classList.add('active')
-        current.previousElementSibling.style.display='block'
-      }else{
-        picture[imagesArray -1].classList.add('active')
-      }
-      setTimeout(() => {current.classList.remove('active')})
-    }
+//       const nextPicture = () => {
+//       const current = document.querySelector('.active');
+//       current.classList.remove('active')
+//       current.style.display = 'none';
+//       if (current.nextElementSibling){
+//         current.nextElementSibling.classList.add('active')
+//         current.nextElementSibling.style.display = "block";
+//       }else{
+//         picture[0].classList.add('active')
+//       }
+//       setTimeout(() => {current.classList.remove('active')})
+//     }
+//     const prevPicture = () => {
+//       const current = document.querySelector('.active');
+//       current.classList.remove('active')
+//       current.style.display = 'none'
+//       if (current.previousElementSibling){
+//         current.previousElementSibling.classList.add('active')
+//         current.previousElementSibling.style.display='block'
+//       }else{
+//         picture[imagesArray -1].classList.add('active')
+//       }
+//       setTimeout(() => {current.classList.remove('active')})
+//     }
     
-    divRight.addEventListener('click' , () => {
-      nextPicture();
-    })
-    divLeft.addEventListener('click', () => {
-      prevPicture();
-    })
-  })
+//     divRight.addEventListener('click' , () => {
+//       nextPicture();
+//     })
+//     divLeft.addEventListener('click', () => {
+//       prevPicture();
+//     })
+//   })
   
-  return carouselDiv;
-}
+//   return carouselDiv;
+// }
 
-const carContainer = document.querySelector('.carousel-container')
-carContainer.append(carouselCompnent(imagesArray))
+// const carContainer = document.querySelector('.carousel-container')
+// carContainer.append(carouselCompnent(imagesArray))

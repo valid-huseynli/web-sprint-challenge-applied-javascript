@@ -10,8 +10,7 @@
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
 
-axios.get('https://lambda-times-api.herokuapp.com/topics')
-.then((goodResponse) => {
+axios.get('https://lambda-times-api.herokuapp.com/topics').then((goodResponse) => {
     // console.log('tab data' , goodResponse)
     goodResponse.data.topics.forEach((topics) => {
         let divTab=document.createElement('tab')
