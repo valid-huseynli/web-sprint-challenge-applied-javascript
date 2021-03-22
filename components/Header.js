@@ -35,4 +35,3 @@ return mainHeader;
 }
 
 headerCont.appendChild(Header())
-
